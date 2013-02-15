@@ -3943,7 +3943,7 @@ $(genprogerr:%=build/gen%$(build_exeext)): $(BUILD_ERRORS)
 genprog = $(genprogerr) check checksum condmd
 
 # These programs need libs over and above what they get from the above list.
-build/genautomata$(build_exeext) : BUILD_LIBS += -lm
+build/genautomata$(build_exeext) : BUILD_LIBS += @math_library@
 
 # These programs are not linked with the MD reader.
 build/gengtype$(build_exeext) : build/gengtype-lex.o build/gengtype-parse.o \

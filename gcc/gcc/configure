@@ -599,6 +599,7 @@ ac_includes_default="\
 #endif"
 
 ac_subst_vars='LTLIBOBJS
+math_library
 LIBOBJS
 enable_plugin
 pluginlibs
@@ -8793,6 +8794,16 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 # --------
 
 
+# Configure -lm usage for host tools that need it
+math_library="-lm"
+case $host in
+  *-*-haiku*)
+    # no separate math library needed
+    math_library=
+    ;;
+esac
+
+
 # These libraries may be used by collect2.
 # We may need a special search path to get them linked.
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for collect2 libraries" >&5
@@ -11301,7 +11312,7 @@ case ${enable_threads} in
     # default
     target_thread_file='single'
     ;;
-  aix | dce | lynx | mipssde | posix | rtems | \
+  aix | dce | haiku | lynx | mipssde | posix | rtems | \
   single | tpf | vxworks | win32)
     target_thread_file=${enable_threads}
     ;;
@@ -17213,8 +17224,8 @@ haiku*)
   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
   soname_spec='${libname}${release}${shared_ext}$major'
   shlibpath_var=LIBRARY_PATH
-  shlibpath_overrides_runpath=yes
-  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/beos/system/lib'
+  shlibpath_overrides_runpath=no
+  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/system/lib'
   hardcode_into_libs=yes
   ;;
 
@@ -20872,8 +20883,8 @@ haiku*)
   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
   soname_spec='${libname}${release}${shared_ext}$major'
   shlibpath_var=LIBRARY_PATH
-  shlibpath_overrides_runpath=yes
-  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/beos/system/lib'
+  shlibpath_overrides_runpath=no
+  sys_lib_dlsearch_path_spec='/boot/home/config/lib /boot/common/lib /boot/system/lib'
   hardcode_into_libs=yes
   ;;
 

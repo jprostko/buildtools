@@ -11269,6 +11269,7 @@ configure-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} --disable-shared @extra_mpfr_configure_flags@ \
@@ -11302,6 +11303,7 @@ configure-stage1-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \
@@ -11335,6 +11337,7 @@ configure-stage2-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \
@@ -11342,6 +11345,7 @@ configure-stage2-mpfr:
 	  $(STAGE2_CONFIGURE_FLAGS) \
 	  --disable-shared @extra_mpfr_configure_flags@
 @endif mpfr-bootstrap
+
 
 .PHONY: configure-stage3-mpfr maybe-configure-stage3-mpfr
 maybe-configure-stage3-mpfr:
@@ -11369,6 +11373,7 @@ configure-stage3-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \
@@ -11403,6 +11408,7 @@ configure-stage4-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \
@@ -11437,6 +11443,7 @@ configure-stageprofile-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \
@@ -11471,6 +11478,7 @@ configure-stagefeedback-mpfr:
 	esac; \
 	srcdiroption="--srcdir=$${topdir}/mpfr"; \
 	libsrcdir="$$s/mpfr"; \
+	cp $(s)/gmp/gmp-impl.h $(s)/gmp/longlong.h ../gmp/ ; \
 	$(SHELL) $${libsrcdir}/configure \
 	  $(HOST_CONFIGARGS) --build=${build_alias} --host=${host_alias} \
 	  --target=${target_alias} $${srcdiroption} \

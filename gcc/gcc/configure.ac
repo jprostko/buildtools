@@ -964,6 +964,15 @@ AC_LANG_POP(C++)
 # UNSORTED
 # --------
 
+# Configure -lm usage for host tools that need it
+math_library="-lm"
+case $host in
+  *-*-haiku*)
+    # no separate math library needed
+    math_library=
+    ;;
+esac
+
 
 # These libraries may be used by collect2.
 # We may need a special search path to get them linked.
@@ -1423,7 +1432,7 @@ case ${enable_threads} in
     # default
     target_thread_file='single'
     ;;
-  aix | dce | lynx | mipssde | posix | rtems | \
+  aix | dce | haiku | lynx | mipssde | posix | rtems | \
   single | tpf | vxworks | win32)
     target_thread_file=${enable_threads}
     ;;
